@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham Verma | Portfolio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2d9d6bc57.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      transition: background 0.5s, color 0.5s;
+    }
+    .navbar {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    .hero-img img {
+      border-radius: 50%;
+      border: 4px solid #00bcd4;
+      animation: float 3s ease-in-out infinite;
+      box-shadow: 0 0 25px #00bcd4;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .typing {
+      border-right: 3px solid #00bcd4;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 3s steps(25) infinite alternate;
+      color: #00bcd4;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .glow-btn {
+      box-shadow: 0 0 20px #00bcd4;
+      transition: all 0.3s ease;
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 40px #00e5ff;
+      transform: scale(1.05);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px #00bcd4;
+    }
+    footer {
+      background: rgba(0,0,0,0.5);
+      padding: 15px 0;
+      text-align: center;
+    }
+    .progress {
+      height: 15px;
+      border-radius: 10px;
+      background-color: rgba(255,255,255,0.2);
+    }
+    .progress-bar {
+      background-color: #00bcd4;
+      animation: grow 2s ease forwards;
+    }
+    @keyframes grow {
+      from { width: 0; }
+    }
+    .dark-mode {
+      background: linear-gradient(135deg, #121212, #1f1f1f, #2b2b2b);
+      color: #e0e0e0;
+    }
+    .modal-content {
+      background-color: rgba(0,0,0,0.9);
+      color: white;
+    }
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-xl font-bold text-cyan-400" href="#">Shubham<span class="text-white">Verma</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav items-center gap-3">
+          <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="ms-4 btn btn-outline-info btn-sm">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left px-8 pt-32">
+    <div class="md:w-1/2 space-y-4 animate__animated animate__fadeInLeft">
+      <h1 class="text-5xl font-bold">Hi, I'm <span class="text-cyan-400">Shubham Verma</span></h1>
+      <h3 class="typing text-xl">MCA Student | Java & Python Developer | Aspiring software engineer</h3>
+      <div class="flex justify-center md:justify-start gap-4 mt-4">
+        <a href="#contact" class="btn btn-info glow-btn text-white">Hire Me</a>
+        <a href="Shubham's Resume (3) (1).pdf" class="btn btn-outline-light glow-btn" download>📄 Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-img mt-8 md:mt-0 md:ml-8 animate__animated animate__fadeInRight">
+      <img src="shubham.png" alt="Shubham Verma">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-8 text-center md:text-left">
+    <div class="container mx-auto max-w-4xl animate__animated animate__fadeInUp">
+      <h2 class="text-3xl font-bold mb-4 text-cyan-400">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        I'm currently pursuing <b>MCA</b> from <b>KIET Group of Institutions</b>. 
+        I completed my <b>BCA</b> from <b>Babu Banarasi Das University</b>. 
+        I have strong knowledge in <b>Java</b> and <b>Python</b>, and I’ve developed several projects,
+        including a <b>2D Game</b>. I’m passionate about learning new technologies and creating innovative solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-8 text-center bg-opacity-10">
+    <div class="container mx-auto max-w-4xl animate__animated animate__fadeInUp">
+      <h2 class="text-3xl font-bold mb-8 text-cyan-400">My Skills</h2>
+      <div class="text-left space-y-6">
+        <div><h4>Java <i class="fab fa-java text-orange-400"></i></h4><div class="progress"><div class="progress-bar" style="width: 90%"></div></div></div>
+        <div><h4>Python <i class="fab fa-python text-yellow-400"></i></h4><div class="progress"><div class="progress-bar" style="width: 85%"></div></div></div>
+        <div><h4>HTML / CSS / JS <i class="fab fa-html5 text-red-400"></i> <i class="fab fa-css3-alt text-blue-400"></i> <i class="fab fa-js text-yellow-300"></i></h4><div class="progress"><div class="progress-bar" style="width: 80%"></div></div></div>
+        <div><h4>Bootstrap & Tailwind <i class="fab fa-bootstrap text-purple-400"></i></h4><div class="progress"><div class="progress-bar" style="width: 75%"></div></div></div>
+        <div><h4>Game Development 🎮</h4><div class="progress"><div class="progress-bar" style="width: 70%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="py-20 px-8 text-center">
+    <div class="container mx-auto max-w-5xl animate__animated animate__fadeInUp">
+      <h2 class="text-3xl font-bold mb-8 text-cyan-400">Achievements & Certifications</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+      <div class="card p-5 rounded-xl text-left" data-bs-toggle="modal" data-bs-target="#javaCertModal">
+        <h3 class="text-2xl mb-2 text-cyan-300"><i class="fab fa-java"></i> Java Programming Fundamentals</h3>
+        <p>Issued by <b>Infosys Springboard</b> on <b>October 27, 2025</b>.</p>
+      </div>
+
+      <div class="card p-5 rounded-xl text-left" data-bs-toggle="modal" data-bs-target="#linuxCertModal">
+        <h3 class="text-2xl mb-2 text-cyan-300"><i class="fab fa-linux"></i> Linux for Beginners</h3>
+        <p>Issued by <b>Infosys Springboard</b> on <b>September 24, 2025</b>.</p>
+      </div>
+
+      <div class="card p-5 rounded-xl text-left" data-bs-toggle="modal" data-bs-target="#SECertModal">
+        <h3 class="text-2xl mb-2 text-cyan-300"><i class="fas fa-certificate"></i> Software Project Management Training (PMP)</h3>
+        <p>Issued by <b>Infosys Springboard</b> on <b>Nov 4, 2025</b>.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificate Modals -->
+  <div class="modal fade" id="javaCertModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-cyan-400">Java Programming Fundamentals Certificate</h5>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe src="Infosys java certificate.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="linuxCertModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-cyan-400">Linux for Beginners Certificate</h5>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe src="linux certificate.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="modal fade" id="SECertModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-cyan-400"> Software Project Management Training (PMP) Certificate</h5>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe src="SE certificate.pdf"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-8 text-center">
+    <h2 class="text-3xl font-bold text-cyan-400 mb-4">Contact Me</h2>
+    <p>📧 <a href="mailto:vermashubham4825@gmail.com" class="text-cyan-400 hover:underline">vermashubham4825@gmail.com</a></p>
+    <p>📞 9555850292</p>
+    <p>🔗 
+      <a href="https://www.linkedin.com/in/shubham-verma-836210385/" target="_blank" class="text-cyan-400 hover:underline me-3">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/Shubhamvverma" target="_blank" class="text-cyan-400 hover:underline">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Shubham Verma | All Rights Reserved</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Theme Toggle -->
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
